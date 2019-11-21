@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    height: 100vh;
+    width: 30vw;
+    margin: 0 auto;
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden; /*There shouldnt be any of this*/
+    scrollbar-width: none;
+}
+
+#nav{
+    width: inherit;
+    max-height: 10vh;
+    height: 10vh;
+    position: fixed;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray; 
+}
+
+#nav h3{
+    margin-left: 2px;
+}
+
+#post-container{
+    margin-top: 10vh;
+}
+.post{
+    height: 300px;
+    width: inherit;
+}
