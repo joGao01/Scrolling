@@ -7,6 +7,7 @@ body{
 #container {
     height: 100vh;
     width: 30vw;
+    min-width: 380px;
     margin: 0 auto;
     background-color: white;
     overflow-y: scroll;
@@ -16,6 +17,7 @@ body{
 
 #nav{
     width: inherit;
+    min-width: inherit;
     max-height: 10vh;
     height: 10vh;
     position: fixed;
@@ -25,12 +27,28 @@ body{
 
 #nav h3{
     margin-left: 2px;
+    font-size: 3vh;
 }
 
 #post-container{
     margin-top: 10vh;
 }
 .post{
-    height: 300px;
     width: inherit;
+}
+
+.user { /*todo: set mins for these dimension*/
+    height: 8vh;
+}
+
+.image{
+    height: 30vw;
+    background-color: gray;
+}
+
+.like {
+    height: 6vh;
+}
+.caption {
+    height: 13vh;
 }
