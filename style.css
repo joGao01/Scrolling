@@ -15,6 +15,11 @@ body{
     scrollbar-width: none;
 }
 
+/*for chrome*/
+#container::-webkit-scrollbar{
+    display: none;
+}
+
 #nav{
     width: inherit;
     min-width: inherit;
