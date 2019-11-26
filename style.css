@@ -2,6 +2,7 @@ body{
     background-color: black;
     padding: 0;
     margin: 0;
+    font-size: 3vh;
 }
 
 #container {
@@ -38,9 +39,10 @@ body{
 
 #post-container{
     margin-top: 10vh;
+    width: 100%;
 }
 .post{
-    width: inherit;
+    width: 100%;
 }
 
 .user, .likebar, .caption {
@@ -49,6 +51,7 @@ body{
 
 .user { /*todo: set mins for these dimension*/
     padding: 1vw;
+    max-height: 50px;
 }
 
 .pfp{
@@ -60,10 +63,12 @@ body{
 
 .imageCont{
     background-color: gray;
+    height: auto;
+    width: 100%;
 }
 
 .post-image {
-    max-width: inherit;
+    width: 100%;
 }
 
 .likebar {
