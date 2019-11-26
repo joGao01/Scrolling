@@ -63,7 +63,7 @@ body{
 }
 
 .post-image {
-    max-width: 100%;
+    max-width: inherit;
 }
 
 .likebar {
