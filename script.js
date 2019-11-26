@@ -1,11 +1,9 @@
 var cont = document.getElementById("post-container");
 
 function init(){
-    console.log("begin");
     for(var i = 0; i < 5; i++){
         generatePost();
     }
-    
 }
 
 function generateMore(){  
@@ -43,7 +41,7 @@ function generatePost(){
     
     var heart = document.createElement("img");
     heart.src = "images/heart-icon.png";
-    heart.onclick = function(){ clickedHeart(); }
+    heart.onclick = function(){ clickedHeart(this); }
     likebar.append(heart);
 
     caption.innerHTML = `<b>${username}</b> THIS IS A CAPTION`;
@@ -59,8 +57,15 @@ function randomString(){
 }
 
 //toggles heart
-function clickedHeart(){
-
+function clickedHeart(element){
+    var licked = "images/heart-icon-liked.png";
+    var not = "images/heart-icon.png";
+    if ((element.src).includes(not)){
+        element.src = licked; 
+    } else {
+        element.src = not;
+    }
+    
 }
 
 /*<div class="post">

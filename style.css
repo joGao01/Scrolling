@@ -2,7 +2,8 @@ body{
     background-color: black;
     padding: 0;
     margin: 0;
-    font-size: 3vh;
+    font-size: 2vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #container {
@@ -46,11 +47,10 @@ body{
 }
 
 .user, .likebar, .caption {
-    padding: 1vw 1vw;
+    padding: 2vw;
 } 
 
 .user { /*todo: set mins for these dimension*/
-    padding: 1vw;
     max-height: 50px;
 }
 
@@ -77,4 +77,9 @@ body{
 
 .likebar img{
     max-height: 100%;
+
+}
+
+.likebar img:hover{
+    cursor: pointer;
 }
