@@ -2,46 +2,28 @@
 <html>
     <head>
         <Title>Scroll</Title>
+        <meta charset="UTF-8">
         <link href="style.css" rel="stylesheet">
+        <script src="node_modules/username-generator"></script>
     </head>
 
     <body>
-        <div id="container">
+        <div id="container" onscroll="generateMore()">
             <div id="nav">
                 <h3>BINCHTAGRAM</h3>
             </div>
 
             <div id="post-container">
-                <div class="post">
-                    <div class="user">SomeUser</div>
-                    <div class="image">An Image</div>
-                    <div class="underImage">
-                        <div class="likebar">Heart</div>
-                        <div class="caption"><b>SomeUser</b> This is some caption</div>
-                    </div>
 
-                </div>
-                      
-                <div class="post">
-                    <div class="user">SomeUser</div>
-                    <div class="image">An Image</div>
-                    <div class="underImage">
-                        <div class="likebar">Heart</div>
-                        <div class="caption"><b>SomeUser</b> This is some caption</div>
-                    </div>
-
-                </div>
-
-                    <div class="post">
-                        <div class="user">SomeUser</div>
-                        <div class="image">An Image</div>
-                        <div class="underImage">
-                            <div class="likebar">Heart</div>
-                            <div class="caption"><b>SomeUser</b> This is some caption</div>
-                        </div>
-    
-                    </div>
             </div>
         </div>
+
+        <script src="script.js"></script>
+        <script>
+            window.onload = function(){
+                console.log("begin"); 
+			    init();
+		    } 
+        </script>
     </body>
 </html>

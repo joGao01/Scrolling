@@ -7,12 +7,13 @@ body{
 #container {
     height: 100vh;
     width: 30vw;
+    max-width: 30vw;
     min-width: 380px;
     margin: 0 auto;
     background-color: white;
     overflow-y: scroll;
     overflow-x: hidden; /*There shouldnt be any of this*/
-    scrollbar-width: none;
+    scrollbar-width: none; /*for Firefox*/
 }
 
 /*for chrome*/
@@ -20,14 +21,16 @@ body{
     display: none;
 }
 
-#nav{
+#nav{ /*todo: this is broken*/
     width: inherit;
     min-width: inherit;
+    max-width: inherit;
     max-height: 10vh;
-    height: 10vh;
+    height: 9vh;
     position: fixed;
     background-color: white;
     box-shadow: 0 4px 2px -2px gray; 
+    padding: 1vw;
 }
 
 #nav h3{
@@ -42,8 +45,13 @@ body{
     width: inherit;
 }
 
+.user, .likebar, .caption {
+    padding: 1vw 1vw;
+} 
+
 .user { /*todo: set mins for these dimension*/
     height: 8vh;
+    padding: 0 1vw;
 }
 
 .image{
@@ -51,8 +59,12 @@ body{
     background-color: gray;
 }
 
-.like {
-    height: 6vh;
+.likebar {
+    height: 5vh;
+}
+
+.likebar img{
+    max-height: 100%;
 }
 .caption {
     height: 13vh;
