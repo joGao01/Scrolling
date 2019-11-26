@@ -84,9 +84,10 @@ body{
     cursor: pointer;
 }
 
-@media screen and (max-width: 420px) {
-    /* CSS for screens that are 320 pixels or less will be put in this section */
+@media screen and (max-width: 480px) {
+    /* CSS for screens that are 420 pixels or less will be put in this section */
     #container {
         width: 100vw;
+        height: 100vh;
     }
 }
