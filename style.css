@@ -21,20 +21,18 @@ body{
     display: none;
 }
 
-#nav{ /*todo: this is broken*/
+
+#nav { /*todo: this is broken*/
     width: inherit;
     min-width: inherit;
-    max-width: inherit;
-    max-height: 10vh;
-    height: 9vh;
     position: fixed;
     background-color: white;
     box-shadow: 0 4px 2px -2px gray; 
-    padding: 1vw;
+    text-align: center;
+    
 }
 
 #nav h3{
-    margin-left: 2px;
     font-size: 3vh;
 }
 
@@ -50,13 +48,22 @@ body{
 } 
 
 .user { /*todo: set mins for these dimension*/
-    height: 8vh;
-    padding: 0 1vw;
+    padding: 1vw;
 }
 
-.image{
-    height: 30vw;
+.pfp{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.imageCont{
     background-color: gray;
+}
+
+.post-image {
+    max-width: 100%;
 }
 
 .likebar {
@@ -65,7 +72,4 @@ body{
 
 .likebar img{
     max-height: 100%;
-}
-.caption {
-    height: 13vh;
 }
