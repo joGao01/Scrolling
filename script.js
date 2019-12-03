@@ -4,10 +4,11 @@ var clocks = ["twelve.png", "one.png", "two.png", "three.png", "four.png", "five
             "six.png", "seven.png", "eight.png", "nine.png", "ten.png", "eleven.png"];
 var curr = [];
 var colors = []; //correspends to "threads"
+var users = [];
 
 function init(){
     for(var i = 0; i < 5; i++){
-        generatePost("images/black.png", "white");
+        generatePost("images/black.png", "white", "0000000");
     }
 }
 
@@ -22,18 +23,18 @@ function generateMore(){
             //pick a random ind of curr (thread-ish), generate post from that num, then increment that index
             ind = Math.floor(Math.random()*curr.length);
             console.log(curr);
-            generatePost("images/" + clocks[curr[ind]], colors[ind]);
-            curr[ind] --; //decrement
+            generatePost("images/" + clocks[curr[ind]], colors[ind], users[ind]);
+            curr[ind]--; //decrement
             if (curr[ind] < 0) {
-                curr[ind] = curr.length - 1;
+                curr[ind] = clocks.length - 1;
             }
         } else {
-            generatePost("images/black.png", "white");
+            generatePost("images/black.png", "white", "0000000");
         }
     }
 }
 
-function generatePost(img, color){
+function generatePost(img, color, username){
     var post = document.createElement("div");
     var user = document.createElement("div");
     var imageCont = document.createElement("div");
@@ -50,8 +51,7 @@ function generatePost(img, color){
     var pfp = document.createElement("img");
     pfp.className = "pfp"; 
     user.append(pfp);
-    
-    var username = randomString();
+
     user.innerHTML = `<b>${username}</b>`;
 
     var image = document.createElement("img");
@@ -65,10 +65,8 @@ function generatePost(img, color){
     heart.src = "images/heart-icon.png";
     heart.onclick = function(){ clickedHeart(this); }
     likebar.append(heart);
-    //var likedNumber = document.createTextNode;
-    //likedNumber = `${foreverIncr(n)}`
 
-    caption.innerHTML = `<b>${username}</b> THIS IS A CAPTION`;
+    caption.innerHTML = `<b>${username}</b> Wait have I seen this already?`;
 
     underImage.append(likebar, caption);
     post.append(user, imageCont, underImage);
@@ -95,7 +93,8 @@ function clickedHeart(element){
     if ((element.src).includes(not)){
         colors.push(randomColor()); 
         curr.push(11);
-        generatePost("images/" + clocks[0], colors[colors.length-1]);
+        users.push(randomString());
+        generatePost("images/" + clocks[0], colors[colors.length-1], users[users.length-1]);
         
         element.src = licked;
     } else {
@@ -105,8 +104,6 @@ function clickedHeart(element){
     }
     console.log(curr);
 }
-
-/*an array of clocks. a list of pointers*/
 
 /*<div class="post">
     <div class="user">SomeUser</div>

@@ -103,8 +103,19 @@ body{
 
 @media only screen and (max-width: 500px){
     #container {
-        width: 100vw;
-        max-width: 500px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .user{
+        padding: 2vh;
+    }
+
+    .likebar{
+        padding: 1vh 2vh;
+    }
+    .caption {
+        padding: 1vh 2vh 2vh 2vh;
     }
 }
 
