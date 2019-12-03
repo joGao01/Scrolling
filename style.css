@@ -62,7 +62,6 @@ body{
 }
 
 .imageCont{
-    background-color: gray;
     height: auto;
     width: 100%;
 }
@@ -84,7 +83,10 @@ body{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 480px) {
+
+
+/*big broken*/
+@media only screen and (max-width: 880px) {
     /* CSS for screens that are 420 pixels or less will be put in this section */
     #container {
         width: 100vw;

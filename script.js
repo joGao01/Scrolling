@@ -1,18 +1,39 @@
+var bigCont = document.getElementById("container");
 var cont = document.getElementById("post-container");
+var clocks = ["twelve.png", "one.png", "two.png", "three.png", "four.png", "five.png",
+            "six.png", "seven.png", "eight.png", "nine.png", "ten.png", "eleven.png"];
+var curr = [];
+var colors = []; //correspends to "threads"
 
 function init(){
     for(var i = 0; i < 5; i++){
-        generatePost();
+        generatePost("images/black.png", "white");
     }
 }
 
 function generateMore(){  
-    if (cont.scrollHeight - cont.scrollTop === cont.clientHeight){
-        generatePost();
+    /*if (bigCont.scrollTop >= 8018){
+        console.log("scroll Height: " + bigCont.scrollHeight);
+
+        console.log("scroll top:" + bigCont.scrollTop);
+    } */
+    if (bigCont.scrollHeight - (bigCont.offsetHeight + bigCont.scrollTop) <= 200){
+        if (curr.length != 0){
+            //pick a random ind of curr (thread-ish), generate post from that num, then increment that index
+            ind = Math.floor(Math.random()*curr.length);
+            console.log(curr);
+            generatePost("images/" + clocks[curr[ind]], colors[ind]);
+            curr[ind]++; //increment
+            if (curr[ind] > clocks.length-1) {
+                curr[ind] = 0;
+            }
+        } else {
+            generatePost("images/black.png", "white");
+        }
     }
 }
 
-function generatePost(){
+function generatePost(img, color){
     var post = document.createElement("div");
     var user = document.createElement("div");
     var imageCont = document.createElement("div");
@@ -34,15 +55,18 @@ function generatePost(){
     user.innerHTML = `<b>${username}</b>`;
 
     var image = document.createElement("img");
-    image.src = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60";
+    image.src = img;
     image.className = "post-image";
 
     imageCont.append(image);
+    imageCont.style.backgroundColor = color;
     
     var heart = document.createElement("img");
     heart.src = "images/heart-icon.png";
     heart.onclick = function(){ clickedHeart(this); }
     likebar.append(heart);
+    //var likedNumber = document.createTextNode;
+    //likedNumber = `${foreverIncr(n)}`
 
     caption.innerHTML = `<b>${username}</b> THIS IS A CAPTION`;
 
@@ -56,17 +80,33 @@ function randomString(){
     return Math.random().toString(36).replace('0.', '');
 }
 
+//returns random color as a string rgb
+function randomColor(){
+    var red = (Math.random()*50) + 175;
+    var green = (Math.random()*50) + 175;
+    var blue = (Math.random()*50) + 175;
+    return `rgb(${red}, ${green}, ${blue})`;
+}
+
 //toggles heart
 function clickedHeart(element){
     var licked = "images/heart-icon-liked.png";
     var not = "images/heart-icon.png";
     if ((element.src).includes(not)){
-        element.src = licked; 
+        colors.push(randomColor()); 
+        curr.push(1);
+        generatePost("images/" + clocks[0], colors[colors.length-1]);
+        
+        element.src = licked;
     } else {
         element.src = not;
+        colors.pop();
+        curr.pop();
     }
-    
+    console.log(curr);
 }
+
+/*an array of clocks. a list of pointers*/
 
 /*<div class="post">
     <div class="user">SomeUser</div>
