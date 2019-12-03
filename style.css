@@ -47,11 +47,13 @@ body{
 }
 
 .user, .likebar, .caption {
-    padding: 2vw;
+    padding: 0vw 1vw;
 } 
 
 .user { /*todo: set mins for these dimension*/
     max-height: 50px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 
 .pfp{
@@ -72,6 +74,7 @@ body{
 
 .likebar {
     height: 5vh;
+    padding: 1vw 1vw;
 }
 
 .likebar img{
@@ -83,17 +86,25 @@ body{
     cursor: pointer;
 }
 
+.underImage {
+    padding-bottom: 2vw;
+}
+
 
 
 /*big broken*/
-@media only screen and (max-width: 880px) {
+@media only screen and (max-width: 700px) {
     /* CSS for screens that are 420 pixels or less will be put in this section */
     #container {
-        width: 100vw;
-        height: 100vh;
-    
-    }
-    #post-container {
-        background-color: red;
+        width: 80vw;
+        max-width: 600px;
     }
 }
+
+@media only screen and (max-width: 500px){
+    #container {
+        width: 100vw;
+        max-width: 500px;
+    }
+}
+

@@ -23,9 +23,9 @@ function generateMore(){
             ind = Math.floor(Math.random()*curr.length);
             console.log(curr);
             generatePost("images/" + clocks[curr[ind]], colors[ind]);
-            curr[ind]++; //increment
-            if (curr[ind] > clocks.length-1) {
-                curr[ind] = 0;
+            curr[ind] --; //decrement
+            if (curr[ind] < 0) {
+                curr[ind] = curr.length - 1;
             }
         } else {
             generatePost("images/black.png", "white");
@@ -94,7 +94,7 @@ function clickedHeart(element){
     var not = "images/heart-icon.png";
     if ((element.src).includes(not)){
         colors.push(randomColor()); 
-        curr.push(1);
+        curr.push(11);
         generatePost("images/" + clocks[0], colors[colors.length-1]);
         
         element.src = licked;
